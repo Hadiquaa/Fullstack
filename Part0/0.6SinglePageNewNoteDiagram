@@ -1,0 +1,8 @@
+sequenceDiagram
+    participant  Browser
+    participant  Server
+    Browser->>Server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    activate Server
+    Note right of Browser: This time the server does not request for another get request
+    Server-->>Browser: status code 201 created
+    deactivate Server
